@@ -1,54 +1,62 @@
-# Use Python base image
-FROM python:3.12
+FROM ubuntu
+WORKDIR /tmp
+RUN echo "Ns LONI New Step in MLOps and AI Enginnering Field"
+ENV myname nsloni
+COPY testing_file /tmp
+ADD testing_file /tmp
+# -----------------------Normal - 1 ------------------------------------------------Advanced Level----------------------------------------------------------------------------------------
 
-# Set working directory
-WORKDIR /app
+# # Use Python base image
+# FROM python:3.12
 
-# Copy app files
-COPY . .
+# # Set working directory
+# WORKDIR /app
 
-# Install dependencies
-RUN pip install flask pandas numpy
+# # Copy app files
+# COPY . .
 
-# Expose the port
-EXPOSE 5000
+# # Install dependencies
+# RUN pip install flask pandas numpy
 
-# Run the app
-CMD ["python", "app.py"]
+# # Expose the port
+# EXPOSE 5000
 
------------------------------------------------------------------------Advanced Level----------------------------------------------------------------------------------------
-# Use official Python base image
-FROM python:3.12-slim
+# # Run the app
+# CMD ["python", "app.py"]
 
-# Set environment variables for Python
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+# # # -----------------------------------------------------------------------Advanced Level----------------------------------------------------------------------------------------
+# # # Use official Python base image
+# # FROM python:3.12-slim
 
-# Set work directory
-WORKDIR /app
+# # # Set environment variables for Python
+# # ENV PYTHONDONTWRITEBYTECODE=1 \
+# #     PYTHONUNBUFFERED=1
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    gcc \
-    && rm -rf /var/lib/apt/lists/*
+# # # Set work directory
+# # WORKDIR /app
 
-# Copy dependency file first for better caching
-COPY requirements.txt .
+# # # Install system dependencies
+# # RUN apt-get update && apt-get install -y --no-install-recommends \
+# #     build-essential \
+# #     gcc \
+# #     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+# # # Copy dependency file first for better caching
+# # COPY requirements.txt .
 
-# Copy project files
-COPY . .
+# # # Install Python dependencies
+# # RUN pip install --upgrade pip && \
+# #     pip install -r requirements.txt
 
-# Create a non-root user and switch to it (optional but safer)
-RUN useradd -m appuser
-USER appuser
+# # # Copy project files
+# # COPY . .
 
-# Expose the Flask port
-EXPOSE 5000
+# # # Create a non-root user and switch to it (optional but safer)
+# # RUN useradd -m appuser
+# # USER appuser
 
-# Command to run the app
-CMD ["python", "app.py"]
+# # # Expose the Flask port
+# # EXPOSE 5000
+
+# # # Command to run the app
+# # CMD ["python", "app.py"]
