@@ -3,7 +3,7 @@ WORKDIR /tmp
 RUN echo "Ns LONI New Step in MLOps and AI Enginnering Field"
 ENV myname nsloni
 COPY testing_file /tmp
-ADD testing_file /tmp
+ADD test.tar.gz /tmp
 # -----------------------Normal - 1 ------------------------------------------------Advanced Level----------------------------------------------------------------------------------------
 
 # # Use Python base image
