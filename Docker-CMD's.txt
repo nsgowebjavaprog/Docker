@@ -1,0 +1,36 @@
+docker build -t <imagename> .
+
+docker run -d -p 5000:5000 helloapp
+docker logindqfvewcwcerferveafscerfvwearcefcearvvsedf
+username
+password
+
+docker tag myhelloapp username/reponame or imagename
+docker push username/reponame or imagename
+
+│21: docker run -it ubuntu /bin/bash
+│22: docker images                              
+│23: docker run -it kalilinux/kali-rolling /bin/sh│
+│24: docker ps                                    │
+│25: docker ps -a                                 │
+│26: dockerdokcer                                 │
+│27: cls                                          │
+│28: docker images                                │
+│29: docker rmi jenkins/jenkins                   │
+│30: docker rmi -f jenkins/jenkins                │
+│31: docker rm -f jenkins/jenkins                 │
+│32: docker rmi -f jenkins                        │
+│33: docker rm -f jenkins/jenkins:lts             │
+│34: docker rm -f jenkins:lts                     │
+│35: docker rmi -f jenkins/jenkins:lts            │
+│36: cls                                          │
+│37: dokcer run -p 8080:8080 jenkins/jenkins:lts  │
+│38: docker run -p 8080:8080 jenkins/jenkins:lts  │
+│39: clear                                        │
+│40: cls
+FROM ubuntu
+WORKDIR /tmp
+RUN echo "Subscribe the ineuron intelligence"
+ENV myname sunny
+COPY testfile /tmp
+ADD test.tar.gz /tmp
